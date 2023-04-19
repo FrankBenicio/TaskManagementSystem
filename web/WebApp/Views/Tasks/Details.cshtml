@@ -1,0 +1,49 @@
+﻿@model Domain.UseCases.TaskUseCases.Dto.TaskItem
+
+@{
+    ViewData["Title"] = "Details Task";
+}
+
+<div class="col-md-12">
+    <p>
+        <a asp-action="Index" class="btn btn-outline-primary">Back</a>
+    </p>
+    @if (Model.Status == Domain.Enums.Status.Pending)
+    {
+        <p>
+            <a asp-action="InProgress" asp-route-id="@Model.Id" class="btn btn-primary">Move to In Progress</a>
+            <a asp-action="Completed" asp-route-id="@Model.Id" class="btn btn-primary">Move to Completed</a>
+        </p>
+    }
+    else if (Model.Status == Domain.Enums.Status.InProgress)
+    {
+        <p>
+            <a asp-action="Pending" asp-route-id="@Model.Id" class="btn btn-primary">Move to Peding</a>
+            <a asp-action="Completed" asp-route-id="@Model.Id" class="btn btn-primary">Move to Completed</a>
+        </p>
+    }
+    
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h6 class="card-title">Title</h6>
+        <p class="small fst-italic">@Model.Title</p>
+
+        <h6 class="card-title">Category</h6>
+        <p class="small fst-italic">@Model.Category</p>
+
+        <h6 class="card-title">Description</h6>
+        <p class="small fst-italic">@Model.Description</p>
+
+        <h6 class="card-title">Status</h6>
+        <p class="small fst-italic">@Model.Status</p>
+
+        <h6 class="card-title">Creation Date</h6>
+        <p class="small fst-italic">@Model.CreationDate</p>
+
+        <h6 class="card-title">Date Conclusion</h6>
+        <p class="small fst-italic">@Model.DateConclusion</p>
+    </div>
+</div>
+

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Domain.UseCases.CategoryUseCases.Dto.CategoryItem>
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<div class="row">
+    <div class="col-md-12 right">
+        <p>
+            <a asp-action="Create" class="btn btn-primary">New Category</a>
+        </p>
+    </div>
+
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@ViewData["Title"]</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Any())
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id=item.Id  }, htmlAttributes: new { @class="btn btn-outline-warning btn-sm"})
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="2">No results.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="section dashboard">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card info-card customers-card">
+                <div class="card-body">
+                    <h5 class="card-title">Pending <span>| Task</span></h5>
+
+                    <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-exclamation-circle"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h6>@ViewBag.Pending</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card info-card sales-card">
+                <div class="card-body">
+                    <h5 class="card-title">In Progress <span>| Task</span></h5>
+
+                    <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-clock-history"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h6>@ViewBag.InProgress</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card info-card revenue-card">
+                <div class="card-body">
+                    <h5 class="card-title">Completed <span>| Task</span></h5>
+
+                    <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                        <div class="ps-3">
+                            <h6>@ViewBag.Completed</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
